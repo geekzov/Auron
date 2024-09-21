@@ -14,70 +14,56 @@
             --code-background: #2c3e50;
         }
 
-        body,
-        html {
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--background-color);
+            padding-top: 80px; /* Adjust based on your header height */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         header {
             background-color: var(--secondary-color);
             color: #fff;
-            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: 80px; /* Fixed height for header */
+            display: flex;
+            align-items: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            position: fixed;  /* Make header fixed */
-            width: 100%;      /* Full width */
-            top: 0;           /* Stick to top */
-            z-index: 1000;    /* Ensure it’s above other elements */
+        }
+
+        header .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
         }
 
         header img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        nav {
-            background-color: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin: 0;
-        }
-
-        nav ul li a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: bold;
-            padding: 1rem 1.5rem;
-            display: block;
-            transition: background-color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background-color: var(--primary-color);
-            color: #fff;
+            max-height: 60px; /* Adjust based on your logo */
+            width: auto;
         }
 
         main {
-            padding: 6rem 0 2rem;  /* Add top padding to prevent overlap with fixed header */
+            padding-top: 20px;
+            padding-bottom: 2rem;
         }
 
         section {
@@ -92,6 +78,7 @@
             color: var(--primary-color);
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         pre {
@@ -101,18 +88,20 @@
             border-radius: 5px;
             overflow-x: auto;
             font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
         }
 
         .feature-list {
-            display: flex;  /* Change to flexbox for horizontal layout */
-            overflow-x: auto;  /* Allow horizontal scrolling if needed */
-            margin: -10px;  /* Adjust margins */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
         }
 
         .feature-item {
-            flex: 1;  /* Distribute items evenly */
-            margin: 10px;  /* Space between items */
-            min-width: 200px;  /* Set a minimum width */
+            flex: 1 1 calc(33.333% - 20px);
+            min-width: 200px;
             background-color: var(--primary-color);
             color: #fff;
             padding: 20px;
@@ -133,23 +122,6 @@
             margin-top: 2rem;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn:hover {
-            background-color: #6c3cf7;
-        }
-
         .social-links {
             display: flex;
             justify-content: center;
@@ -158,31 +130,57 @@
         }
 
         .social-links a {
-            color: var(--primary-color);
+            color: #fff;
             font-size: 24px;
             transition: color 0.3s ease;
         }
 
         .social-links a:hover {
-            color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
         }
 
         @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
+            body {
+                padding-top: 60px; /* Adjust for smaller header on mobile */
             }
 
-            nav ul li {
-                width: 100%;
-                text-align: center;
+            header {
+                height: 60px;
             }
 
-            nav ul li a {
-                padding: 0.5rem 1rem;
+            header img {
+                max-height: 40px;
             }
 
-            .feature-list {
-                flex-direction: column;  /* Stack vertically on smaller screens */
+            main {
+                padding-top: 10px;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .feature-item {
+                flex: 1 1 100%;
+            }
+
+            pre {
+                font-size: 12px;
             }
         }
     </style>
@@ -192,44 +190,32 @@
 <body>
     <header>
         <div class="container">
-            <img src="/auron-logo-header.svg" alt="Auron Programming Language" width="800" height="200"> <!-- Replace with your logo -->
-            <h1>Auron Programming Language</h1>
+            <img src="/auron-logo-header.svg" alt="Auron Programming Language">
         </div>
     </header>
 
-    <nav>
+    <main>
         <div class="container">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#sample">Sample Code</a></li>
-                <li><a href="#get-involved">Get Involved</a></li>
-                <li><a href="#author">Author</a></li>
-            </ul>
-        </div>
-    </nav>
+            <section id="about">
+                <h2>About Auron</h2>
+                <p>Welcome to the official page of the Auron programming language. Auron is a modern, multi-paradigm language designed for efficient web and mobile application development.</p>
+            </section>
 
-    <main class="container">
-        <section id="about">
-            <h2>About Auron</h2>
-            <p>Welcome to the official page of the Auron programming language. Auron is a modern, multi-paradigm language designed for efficient web and mobile application development.</p>
-        </section>
+            <section id="features">
+                <h2>Key Features</h2>
+                <div class="feature-list">
+                    <div class="feature-item">Multi-paradigm Support</div>
+                    <div class="feature-item">Strong, Static Typing</div>
+                    <div class="feature-item">Type Inference</div>
+                    <div class="feature-item">Built-in Concurrency</div>
+                    <div class="feature-item">Native JSON Support</div>
+                    <div class="feature-item">Cross-platform Compatibility</div>
+                </div>
+            </section>
 
-        <section id="features">
-            <h2>Key Features</h2>
-            <div class="feature-list">
-                <div class="feature-item">Multi-paradigm Support</div>
-                <div class="feature-item">Strong, Static Typing</div>
-                <div class="feature-item">Type Inference</div>
-                <div class="feature-item">Built-in Concurrency</div>
-                <div class="feature-item">Native JSON Support</div>
-                <div class="feature-item">Cross-platform Compatibility</div>
-            </div>
-        </section>
-
-        <section id="sample">
-            <h2>Sample Code</h2>
-            <pre><code>fn main() {
+            <section id="sample">
+                <h2>Sample Code</h2>
+                <pre><code>fn main() {
     let greeting = "Hello, Auron!";
     print(greeting);
 
@@ -251,23 +237,26 @@
         print(result);
     }
 }</code></pre>
-        </section>
+            </section>
 
-        <section id="get-involved">
-            <h2>Get Involved</h2>
-            <p>Auron is currently in active development, and we're working on implementing core components such as the lexer, parser, and runtime environment. Your contributions can help shape the future of Auron and push the boundaries of modern programming!</p>
-            <a href="https://github.com/geekzov/auron-lang" class="btn">Contribute on GitHub</a>
-        </section>
+            <section id="get-involved">
+                <h2>Get Involved</h2>
+                <p>Auron is currently in active development, and we're working on implementing core components such as the lexer, parser, and runtime environment. Your contributions can help shape the future of Auron and push the boundaries of modern programming!</p>
+                <p style="margin-top: 20px;">
+                    <a href="https://github.com/geekzov/auron-lang" class="btn">Contribute on GitHub</a>
+                </p>
+            </section>
 
-        <section id="author">
-            <h2>About the Author</h2>
-            <p>Auron is created & maintained by geekzov. For any inquiries or discussions, feel free to reach out.</p>
-            <div class="social-links">
-                <a href="https://github.com/geekzov" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                <a href="https://twitter.com/geekzov" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com/geekzov" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            </div>
-        </section>
+            <section id="author">
+                <h2>About the Author</h2>
+                <p>Auron is created & maintained by geekzov. For any inquiries or discussions, feel free to reach out.</p>
+                <div class="social-links">
+                    <a href="https://github.com/geekzov" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/geekzov" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/geekzov" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
