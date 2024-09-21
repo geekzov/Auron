@@ -48,7 +48,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 0 20px; /* Optional padding for the header */
+    padding: 0 20px; /* Optional: Space around the logo */
 }
 
 header .container {
@@ -56,16 +56,14 @@ header .container {
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%; /* Ensures full width of the header */
+    width: 100%;
 }
 
 .logo {
-    max-height: 60px; /* Ensures the logo fits inside the header */
-    max-width: 100%; /* Keeps the aspect ratio of the SVG */
-    height: auto; /* Maintain aspect ratio */
-    width: auto;
+    height: 100%; /* Makes the logo fill the height of the header */
+    width: auto; /* Ensures aspect ratio is maintained */
+    display: block;
 }
-
 
         main {
             padding-top: 20px;
