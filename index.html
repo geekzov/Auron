@@ -25,14 +25,7 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--background-color);
-            padding-top: 80px; /* Adjusted to account for header */
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            padding-top: 80px; /* Space for the header */
         }
 
         header {
@@ -48,25 +41,16 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 0 20px;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%; /* Full header height */
         }
 
         .logo {
-            max-height: 100%; /* Logo fits perfectly inside header */
+            max-height: 60px; /* Maintain logo size */
             height: auto;
-            width: auto; /* Maintains aspect ratio */
+            width: auto;
         }
 
         main {
-            padding-top: 20px;
-            padding-bottom: 2rem;
+            padding: 20px;
         }
 
         section {
@@ -92,7 +76,6 @@
             overflow-x: auto;
             font-family: 'Consolas', 'Courier New', monospace;
             font-size: 14px;
-            line-height: 1.4;
         }
 
         .feature-list {
@@ -160,19 +143,15 @@
 
         @media (max-width: 768px) {
             body {
-                padding-top: 60px; /* Adjust for smaller header on mobile */
+                padding-top: 60px; /* Adjust for smaller header */
             }
 
             header {
-                height: 60px;
+                height: 60px; /* Smaller header height */
             }
 
             .logo {
                 max-height: 40px; /* Smaller logo for mobile */
-            }
-
-            main {
-                padding-top: 10px;
             }
 
             section {
@@ -180,47 +159,43 @@
             }
 
             .feature-item {
-                flex: 1 1 100%;
+                flex: 1 1 100%; /* Full width on mobile */
             }
 
             pre {
-                font-size: 12px;
+                font-size: 12px; /* Smaller code font */
             }
         }
     </style>
-    <!-- Ensure the proper loading of Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
     <header>
-        <div class="container">
-            <img src="auron-log.svg" alt="Auron Programming Language" class="logo">
-        </div>
+        <img src="auron-log.svg" alt="Auron Programming Language" class="logo">
     </header>
 
     <main>
-        <div class="container">
-            <section id="about">
-                <h2>About Auron</h2>
-                <p>Welcome to the official page of the Auron programming language. Auron is a modern, multi-paradigm language designed for efficient web and mobile application development.</p>
-            </section>
+        <section id="about">
+            <h2>About Auron</h2>
+            <p>Welcome to the official page of the Auron programming language. Auron is a modern, multi-paradigm language designed for efficient web and mobile application development.</p>
+        </section>
 
-            <section id="features">
-                <h2>Key Features</h2>
-                <div class="feature-list">
-                    <div class="feature-item">Multi-paradigm Support</div>
-                    <div class="feature-item">Strong, Static Typing</div>
-                    <div class="feature-item">Type Inference</div>
-                    <div class="feature-item">Built-in Concurrency</div>
-                    <div class="feature-item">Native JSON Support</div>
-                    <div class="feature-item">Cross-platform Compatibility</div>
-                </div>
-            </section>
+        <section id="features">
+            <h2>Key Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">Multi-paradigm Support</div>
+                <div class="feature-item">Strong, Static Typing</div>
+                <div class="feature-item">Type Inference</div>
+                <div class="feature-item">Built-in Concurrency</div>
+                <div class="feature-item">Native JSON Support</div>
+                <div class="feature-item">Cross-platform Compatibility</div>
+            </div>
+        </section>
 
-            <section id="sample">
-                <h2>Sample Code</h2>
-                <pre><code>fn main() {
+        <section id="sample">
+            <h2>Sample Code</h2>
+            <pre><code>fn main() {
     let greeting = "Hello, Auron!";
     print(greeting);
 
@@ -242,32 +217,29 @@
         print(result);
     }
 }</code></pre>
-            </section>
+        </section>
 
-            <section id="get-involved">
-                <h2>Get Involved</h2>
-                <p>Auron is currently in active development, and we're working on implementing core components such as the lexer, parser, and runtime environment. Your contributions can help shape the future of Auron and push the boundaries of modern programming!</p>
-                <p style="margin-top: 20px;">
-                    <a href="https://github.com/geekzov/auron-lang" class="btn">Contribute on GitHub</a>
-                </p>
-            </section>
+        <section id="get-involved">
+            <h2>Get Involved</h2>
+            <p>Auron is currently in active development, and we're working on implementing core components such as the lexer, parser, and runtime environment. Your contributions can help shape the future of Auron!</p>
+            <p>
+                <a href="https://github.com/geekzov/auron-lang" class="btn">Contribute on GitHub</a>
+            </p>
+        </section>
 
-            <section id="author">
-                <h2>About the Author</h2>
-                <p>Auron is created & maintained by geekzov. For any inquiries or discussions, feel free to reach out.</p>
-                <div class="social-links">
-                    <a href="https://github.com/geekzov" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/geekzov" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com/geekzov" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                </div>
-            </section>
-        </div>
+        <section id="author">
+            <h2>About the Author</h2>
+            <p>Auron is created & maintained by geekzov. For inquiries or discussions, feel free to reach out.</p>
+            <div class="social-links">
+                <a href="https://github.com/geekzov" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/geekzov" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/geekzov" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Auron Programming Language. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 Auron Programming Language. All rights reserved.</p>
     </footer>
 </body>
 
