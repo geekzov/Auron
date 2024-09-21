@@ -25,7 +25,7 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--background-color);
-            padding-top: 80px; /* Adjust based on your header height */
+            padding-top: 80px; /* Adjusted to account for header */
         }
 
         .container {
@@ -35,35 +35,34 @@
             padding: 0 20px;
         }
 
-       header {
-    background-color: var(--secondary-color);
-    color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    height: 80px; /* Fixed height for header */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 0 20px; /* Optional: Space around the logo */
-}
+        header {
+            background-color: var(--secondary-color);
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: 80px; /* Header height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 0 20px;
+        }
 
-header .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
+        header .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Full header height */
+        }
 
-.logo {
-    height: 100%; /* Makes the logo fill the height of the header */
-    width: auto; /* Ensures aspect ratio is maintained */
-    display: block;
-}
+        .logo {
+            max-height: 100%; /* Logo fits perfectly inside header */
+            height: auto;
+            width: auto; /* Maintains aspect ratio */
+        }
 
         main {
             padding-top: 20px;
@@ -168,7 +167,7 @@ header .container {
             }
 
             .logo {
-                height: 40px; /* Adjust for mobile */
+                max-height: 40px; /* Smaller logo for mobile */
             }
 
             main {
