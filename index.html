@@ -36,24 +36,26 @@
             right: 0;
             z-index: 1000;
             display: flex;
-            justify-content: center; /* Centering horizontally */
-            align-items: center; /* Centering vertically */
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
             height: 15vh;
             min-height: 80px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .logo-container {
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100%;
         }
 
-    .logo {
-    max-height: 80%; /* Adjust as needed */
-    max-width: 100%; /* Ensures it scales correctly */
-        
+        .logo {
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
         }
 
         main {
