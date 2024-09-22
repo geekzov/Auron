@@ -57,6 +57,17 @@
             max-width: 100%;
             object-fit: contain;
         }
+        .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slogan {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 20px; /* Adds space between the logo and the slogan */
+}
 
         main {
             padding: 20px;
@@ -197,12 +208,14 @@
 
 <body>
     <header>
+    <div class="header-container">
         <div class="logo-container">
             <img src="auron-logo.svg" alt="Auron Programming Language" class="logo">
         </div>
-        <div>
-            <h2>"Auron: Code Smarter, Build Faster"</h2>
+        <div class="slogan">
+            Auron: Code Smarter, Build Faster.
         </div>
+    </div>
     </header>
 
     <main>
