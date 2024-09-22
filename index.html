@@ -37,11 +37,11 @@
             z-index: 1000;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             padding: 10px;
-            height: 20vh;
-            min-height: 100px;
+            height: 15vh;
+            min-height: 80px;
         }
 
         .logo-container {
@@ -49,33 +49,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50%;
         }
 
         .logo {
-            height: 90%;
+            height: 100%;
             width: auto;
-            max-width: 90%;
+            max-width: 100%;
             object-fit: contain;
-            display: block;
-            margin: auto;
-        }
-
-        .slogan-container {
-            width: 50%;
-            text-align: right;
-            padding-right: 20px;
-        }
-
-        .slogan-container h1 {
-            font-size: 1.5rem;
-            color: #fff;
-            margin: 0;
         }
 
         main {
             padding: 20px;
-            margin-top: calc(20vh + 20px);
+            margin-top: calc(15vh + 20px);
         }
 
         section {
@@ -175,21 +160,8 @@
 
         @media (max-width: 768px) {
             header {
-                height: 15vh;
+                height: 12vh;
                 min-height: 60px;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .logo-container,
-            .slogan-container {
-                width: 100%;
-                text-align: center;
-                padding-right: 0;
-            }
-
-            .slogan-container h1 {
-                font-size: 1.2rem;
             }
 
             main {
@@ -211,8 +183,8 @@
 
         @media (min-width: 1200px) {
             header {
-                height: 25vh;
-                max-height: 200px;
+                height: 18vh;
+                max-height: 150px;
             }
 
             main {
@@ -227,9 +199,6 @@
     <header>
         <div class="logo-container">
             <img src="auron-logo.svg" alt="Auron Programming Language" class="logo">
-        </div>
-        <div class="slogan-container">
-            <h1>Auron: Code Smarter, Build Faster.</h1>
         </div>
     </header>
 
