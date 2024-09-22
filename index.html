@@ -37,7 +37,7 @@
             z-index: 1000;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             padding: 10px;
             height: 20vh;
@@ -49,7 +49,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
+            width: 50%;
         }
 
         .logo {
@@ -57,8 +57,20 @@
             width: auto;
             max-width: 90%;
             object-fit: contain;
-            display: block; 
+            display: block;
             margin: auto;
+        }
+
+        .slogan-container {
+            width: 50%;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        .slogan-container h1 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 0;
         }
 
         main {
@@ -165,6 +177,19 @@
             header {
                 height: 15vh;
                 min-height: 60px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo-container,
+            .slogan-container {
+                width: 100%;
+                text-align: center;
+                padding-right: 0;
+            }
+
+            .slogan-container h1 {
+                font-size: 1.2rem;
             }
 
             main {
@@ -202,6 +227,9 @@
     <header>
         <div class="logo-container">
             <img src="auron-logo.svg" alt="Auron Programming Language" class="logo">
+        </div>
+        <div class="slogan-container">
+            <h1>Auron: Code Smarter, Build Faster.</h1>
         </div>
     </header>
 
